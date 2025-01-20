@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif; 
+    background-color: #f8f9fa; 
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.container {
+    
+    margin-top: 80px;  
+}
+
+.card-header {
+    background-color: #343a40; 
+    color: #fff; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: rgb(184, 216, 216);
+}
+
+.btn {
+    font-weight: 600; 
+    border-radius: 25px; 
+}
+
+#clearButton {
+    background-color: #e74c3c; 
+    border: none;
+}
+
+
+#generateButton {
+    background-color: #27ae60; 
+    border: none;
+}
+
+#generateButton:hover {
+    background-color: #229954; 
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+#clearButton:hover {
+    background-color: #c0392b; 
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+span {
+    font-weight: bold; 
+    color: #2c3e50; 
+}
