@@ -53,24 +53,6 @@ const personGenerator = {
         }
     }`,
 
-    middleNameJson: `{
-        "male": {
-            "count": 10,
-            "list": {
-                "id_1": "Александрович",
-                "id_2": "Максимович",
-                "id_3": "Иванович",
-                "id_4": "Артемович",
-                "id_5": "Дмитриевич",
-                "id_6": "Никитович",
-                "id_7": "Михайлович",
-                "id_8": "Даниилович",
-                "id_9": "Егорович",
-                "id_10": "Андреевич"
-            }
-        }
-    }`,
-
 
     professionJson: `{
         "male": {
@@ -154,6 +136,38 @@ const personGenerator = {
             return maleMiddleName;
         }
     },
+
+   
+    randomMiddleName: function (gender) {
+        const maleName = this.randomValue(this.firstNameMaleJson);
+    
+        if (gender === this.GENDER_FEMALE) {
+            if (maleName === 'Михаил') {
+                return 'Михайловна'; 
+            } else if (maleName.endsWith('й')) {
+                return maleName.slice(0, -1) + 'евна'; 
+            } else if (maleName.endsWith('а')) {
+                return maleName.slice(0, -1) + 'ична'; 
+            } else if (maleName.endsWith('я')) {
+                return maleName.slice(0, -1) + 'евна'; 
+            } else {
+                return maleName + 'овна'; 
+            }
+        } else {
+            if (maleName === 'Михаил') {
+                return 'Михайлович'; 
+            } else if (maleName.endsWith('й')) {
+                return maleName.slice(0, -1) + 'евич'; 
+            } else if (maleName.endsWith('а')) {
+                return maleName.slice(0, -1) + 'ич'; 
+            } else if (maleName.endsWith('я')) {
+                return maleName.slice(0, -1) + 'ич'; 
+            } else {
+                return maleName + 'ович'; 
+            }
+        }
+    },
+     
 
     randomBirthYear: function() {
         const minYear = 1970;
